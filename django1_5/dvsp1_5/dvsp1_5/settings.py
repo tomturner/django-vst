@@ -9,7 +9,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATABASE_TYPE = os.environ.get('DATABASE_TYPE', 'sqlite')
 
 if DATABASE_TYPE == 'sqlite':
@@ -28,7 +28,7 @@ elif DATABASE_TYPE == 'firebird':
     DATABASES = {
         'default': {
             'ENGINE': 'firebird',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'C:\Users\Tom\Documents\GitHub\django-vst\django1_5\dvsp1_5\FIREBIRD.FDB',  # Or path to database file if using sqlite3.
+            'NAME':  os.path.join(BASE_DIR, 'FIREBIRD.FDB'),  # Or path to database file if using sqlite3.
             # The following settings are not used with sqlite3:
             'USER': 'SYSDBA',
             'PASSWORD': 'masterkey',

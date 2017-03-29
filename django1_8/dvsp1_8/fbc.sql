@@ -1,0 +1,1 @@
+create database 'FIREBIRD.FDB' page_size 16384 user 'SYSDBA' password 'masterkey'; 
